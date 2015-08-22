@@ -1,0 +1,23 @@
+#if($word)
+  <h1>$word.getName()</h1>
+#else
+  <h2> Word not found in the Dictionary.<a href="/">Do you want to add</a>? </h2>
+#end
+
+#foreach( $definition in $word.getDefinitions() )
+  
+  <h4><a href="/definition/$definition.getId()">$definition.getInformation()</a></h4>
+#end
+
+
+<form action='/definition' method='post'>
+  <input id="wordId" name="wordId" type="hidden" value="$word.getId()">
+
+  <div class="form-group">
+    <input id="newDefinition" name="newDefinition" class="form-control" required="true" rows="3" placeholder="Add your definition here"></textarea>
+  </div>
+
+    <button type="submit" class="btn btn-info">Click to submit</button>
+    <button type="submit" class="btn btn-info">Go Back</button>
+
+</form>

@@ -1,0 +1,18 @@
+
+
+#foreach( $definition in $word.getDefinitions() )
+  //<h3>What's does $word.getName() mean anyway?</h3>
+  <h4><a href="/definition/$definition.getId()">$definition.getInformation()</a></h4>
+#end
+
+
+<form action='/definition' method='post'>
+  <input id="wordId" name="wordId" type="hidden" value="$word.getId()">
+
+  <div>
+    <input id="newDefinition" name="newDefinition" class="form-control" required="true" rows="3" placeholder="Add your definition here"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-info">Submit</button>
+  <button type="submit" class="btn btn-info">Go Back</button>
+</form>
