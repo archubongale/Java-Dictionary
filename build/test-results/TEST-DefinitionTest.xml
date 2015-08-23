@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DefinitionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-08-23T05:42:06" hostname="Archanas-MBP.home" time="0.022">
+<testsuite name="DefinitionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-08-23T06:26:09" hostname="Archanas-MBP.home" time="0.027">
   <properties/>
-  <testcase name="getDescription_returnsDescription_true" classname="DefinitionTest" time="0.02"/>
+  <testcase name="getDescription_returnsDescription_true" classname="DefinitionTest" time="0.026"/>
   <testcase name="definition_instantiatesCorrectly_true" classname="DefinitionTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
