@@ -6,7 +6,7 @@ Date August 22th, 2015
 
 Description
 
-Dictionary allows users to add the list out all of the words, and let user click on them to view all of their definitions.
+Dictionary allows users to add the list out all of the words, and lets user click on them to view all of their definitions.
 A user is able to add a word, and when viewing a word the user can add one or more definitions.
 
 Setup Instructions
