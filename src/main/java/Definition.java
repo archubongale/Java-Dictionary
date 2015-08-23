@@ -2,20 +2,20 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 
 public class Definition {
-  private static ArrayList<Definition> occurence = new ArrayList<Definition>();
-  private String mInformation;
+  private static ArrayList<Definition> instance = new ArrayList<Definition>();
+  private String mDescription;
   private int mId;
   private LocalDate mCreatedAt;
 
-  public Definition(String information) {
-    mInformation = information;
-    occurence.add(this);
+  public Definition(String description) {
+    mDescription = description;
+    instance.add(this);
     mCreatedAt = LocalDate.now();
-    mId = occurence.size();
+    mId = instance.size();
   }
 
-  public String getInformation() {
-    return mInformation;
+  public String getDescription() {
+    return mDescription;
   }
 
   public int getId() {
@@ -27,16 +27,16 @@ public class Definition {
   }
 
   public static ArrayList<Definition> all() {
-    return occurence;
+    return instance;
   }
 
   public static void clear() {
-    occurence.clear();
+    instance.clear();
   }
 
   public static Definition find(int id) {
     try {
-      return occurence.get(id - 1);
+      return instance.get(id - 1);
     } catch (IndexOutOfBoundsException exception) {
       return null;
     }

@@ -5,8 +5,8 @@
 #end
 
 #foreach( $definition in $word.getDefinitions() )
-  
-  <h4><a href="/definition/$definition.getId()">$definition.getInformation()</a></h4>
+
+  <h4><a href="/definition/$definition.getId()">$definition.getDefinitions()</a></h4>
 #end
 
 
@@ -14,10 +14,12 @@
   <input id="wordId" name="wordId" type="hidden" value="$word.getId()">
 
   <div class="form-group">
-    <input id="newDefinition" name="newDefinition" class="form-control" required="true" rows="3" placeholder="Add your definition here"></textarea>
+    <label for ="definition">Add definition</label>
+    <input id="newDefinition" name="newDefinition" class="form-control" required=" " >
   </div>
 
-    <button type="submit" class="btn btn-info">Click to submit</button>
+    <button type="submit" class="btn btn-info">Submit</button>
+    <form action="/" id="back">
     <button type="submit" class="btn btn-info">Go Back</button>
-
+    </form>
 </form>

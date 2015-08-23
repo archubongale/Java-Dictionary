@@ -9,61 +9,29 @@ public class WordTest {
 
   @Test
   public void Word_instantiatesCorrectly_true() {
-    Word myWord = new Word("Dictionary");
+    Word myWord = new Word("Technology");
     assertEquals(true, myWord instanceof Word);
   }
 
   @Test
-  public void Word_instantiatesWithName_true() {
-    Word myWord = new Word("Dictionary");
-    assertEquals("Dictionary", myWord.getName());
-  }
-
-  @Test
   public void all_returnsAllInstancesOfWord_true() {
-    Word firstWord = new Word("Dictionary");
-    Word secondWord = new Word("Engineering");
+    Word firstWord = new Word("Technology");
+    Word secondWord = new Word("Computer");
     assertTrue(Word.all().contains(firstWord));
     assertTrue(Word.all().contains(secondWord));
   }
 
   @Test
-  public void newId_WordInstantiateWithAnID_true() {
-    Word myWord = new Word("Dictionary");
-    assertEquals(Word.all().size(), myWord.getId());
+  public void find_returnsWordWithSameId() {
+    Word testWord = new Word("Technology");
+    assertEquals(Word.find(testWord.getId()), testWord);
   }
 
   @Test
-  public void find_returnsWordWithSameId_secondWord() {
-    Word firstWord = new Word("Dictionary");
-    Word secondWord = new Word("Engineering");
-    assertEquals(Word.find(secondWord.getId()), secondWord);
+    public void addDefinition_addsDefinitionToList() {
+    Word testWord = new Word("Technology");
+    Definition testWordDefinition = new Definition("the branch of knowledge dealing with engineering or applied sciences.");
+    testWord.addDefinition(testWordDefinition);
+    assertTrue(testWord.getDefinitions().contains(testWordDefinition));
   }
-
-  @Test
-  public void find_returnsNullWhenNoWordFound_null() {
-    assertTrue(Word.find(999) == null);
-  }
-
-  @Test
-  public void clear_emptiesAllWordsFromArrayList() {
-    Word myWord = new Word("Dictionary");
-    Word.clear();
-    assertEquals(Word.all().size(), 0);
-  }
-
-  @Test
-  public void getDefinitions_initiallyReturnsEmptyArrayList() {
-    Word testWord = new Word("Dictionary");
-    assertTrue(testWord.getDefinitions() instanceof ArrayList);
-  }
-
-  @Test
-  public void addDefinition_addsDefinitionToWord() {
-    Word testWord = new Word("Dictionary");
-    Definition testDefinition = new Definition("A resource that lists words and their meanings");
-    testWord.addDefinition(testDefinition);
-    assertTrue(testWord.getDefinitions().contains(testDefinition));
-  }
-
 }
